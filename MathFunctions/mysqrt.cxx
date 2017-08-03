@@ -3,9 +3,18 @@
 #include <math.h> 
 #include <iostream>
 #include "MathFunctions.h"
+#include "TutorialConfig.h"
 using namespace std;
 
 double mysqrt(double value){
     cout<<"william's library"<<endl;
-    return sqrt(value);
+    double result;
+#if defined (HAVE_LOG) && defined (HAVE_EXP) 
+    cout<<"The system has log and exp"<<endl;
+    result = exp(log(value)*0.5);
+#else
+    cout<<"Cannot call the system function"<<endl;
+    result = sqrt(value);
+#endif
+    return result;
 }
