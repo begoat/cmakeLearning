@@ -16,7 +16,7 @@ int main (int argc, char *argv[]) {
         fprintf(stdout,"Usage: %s number\n",argv[0]);     
         return 1;     
     }   
-    double inputValue = atof(argv[1]);   
+    double inputValue = atof(argv[1]);
 #ifdef USE_MYMATH
   double outputValue = mysqrt(inputValue);
 #else

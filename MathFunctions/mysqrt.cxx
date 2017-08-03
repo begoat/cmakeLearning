@@ -6,6 +6,6 @@
 using namespace std;
 
 double mysqrt(double value){
-    cout<<"william's library";
-    return sqrt(value)+1;
+    // cout<<"william's library";
+    return sqrt(value);
 }
