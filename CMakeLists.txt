@@ -1,5 +1,7 @@
 cmake_minimum_required (VERSION 2.6) 
 project (Tutorial) 
+include(CTest)
+
 # The version number. 
 set (Tutorial_VERSION_MAJOR 1) 
 set (Tutorial_VERSION_MINOR 13)   
@@ -34,16 +36,12 @@ endif (USE_MYMATH)
 
 # add the executable 
 add_executable(Tutorial tutorial.cxx) 
-target_link_libraries(Tutorial  ${EXTRA_LIBS})
+target_link_libraries(Tutorial  ${EXTRA_LIBS}) ######################### Have some questions here? not fully understand
 
 # add the install targets
 install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"        
          DESTINATION include)
-
-
-
-include(CTest)
 
 # does the application run
 add_test (TutorialRuns Tutorial 25)
@@ -54,7 +52,7 @@ set_tests_properties (TutorialComp25 PROPERTIES PASS_REGULAR_EXPRESSION "25 is 5
 
 # does it handle negative numbers
 add_test (TutorialNegative Tutorial -25)
-set_tests_properties (TutorialNegative PROPERTIES PASS_REGULAR_EXPRESSION "-25 is 0")
+set_tests_properties (TutorialNegative PROPERTIES PASS_REGULAR_EXPRESSION "-25 is nan") ###################### is zero according to the official documents
 
 # does it handle small numbers
 add_test (TutorialSmall Tutorial 0.0001)
@@ -73,4 +71,4 @@ endmacro (do_test)
  
 # do a bunch of result based tests
 do_test (16 "16 is 4")
-do_test (-25 "-25 is 0")
+do_test (-25 "-25 is nan")

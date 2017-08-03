@@ -4,6 +4,7 @@
 #include <iostream>
 #include "MathFunctions.h"
 #include "TutorialConfig.h"
+#include "Table.h" // generated during the build time 
 using namespace std;
 
 double mysqrt(double value){
