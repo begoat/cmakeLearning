@@ -1,4 +1,7 @@
-# origin file
+# CMakeLearning Tutorial
+[![Build Status](https://travis-ci.org/begoat/cmakeLearning.svg?branch=master)](https://travis-ci.org/begoat/cmakeLearning)
+
+## origin file
 https://cmake.org/cmake-tutorial/
 
 ## Tutorial note:
