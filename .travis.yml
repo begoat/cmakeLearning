@@ -1,0 +1,8 @@
+language: C++
+
+before_install:
+    - mkdir build
+    - cd build
+    - cmake ..
+
+script: make
